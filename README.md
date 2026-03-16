@@ -1,67 +1,111 @@
-# QA Automation with Playwright (Python)
+# QA Automation Framework (Playwright)
 
-This project is a basic **QA automation framework** built with **Python, pytest, and Playwright**.
-It demonstrates automated UI testing using the **Page Object Model (POM)** pattern.
+## Description
 
-The project is designed as a **junior QA automation portfolio project**, focusing on clarity, structure, and correctness.
+This project demonstrates automated UI testing using Playwright with Python.
 
----
+The framework is built to practice end-to-end browser automation and structured test organization.
+It uses the Page Object Model (POM) pattern to separate test logic from page interactions and make tests easier to maintain.
 
-##  What Is Tested
-- Login functionality
-- Successful login with valid credentials
-- Error handling with invalid credentials
-
-Test site used:
-https://the-internet.herokuapp.com/login
+The goal of the project is to demonstrate the basics of QA automation and browser testing.
 
 ---
 
-## Tech Stack
-- Python
-- pytest
-- Playwright
-- Page Object Model (POM)
+## Running the Tests
+
+Clone the repository.
+
+Create a virtual environment.
+
+Install dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+Install Playwright browsers:
+
+```
+playwright install
+```
+
+Run all tests:
+
+```
+pytest
+```
+
+Run a specific test file:
+
+```
+pytest tests/test_login.py
+```
 
 ---
 
-## Project Structure
-qa-automation-playwright/
-├── pages/ # Page Objects
-├── tests/ # Test cases
-├── screenshots/ # Screenshots from test execution
-├── reports/ # Test execution reports
-├── conftest.py # pytest fixtures
-├── pytest.ini # pytest configuration
-├── requirements.txt
+## Technology Stack
+
+* Python
+* Playwright
+* Pytest
+* Page Object Model (POM)
+* Git
+
+---
+
+## Framework Structure
+
+```
+QA-AUTOMATION-PLAYWRIGHT
+│
+├── pages
+│   └── page_objects.py
+│
+├── tests
+│   └── test_example.py
+│
+├── conftest.py
+│
 └── README.md
+```
+
+### Folder Overview
+
+**pages/**
+Contains page objects that store locators and page actions.
+
+**tests/**
+Contains automated test cases.
+
+**conftest.py**
+Provides shared fixtures used by tests.
+
+---
+
+## Design Diagram
+
+The automation framework follows this structure:
+
+```
+Test Cases
+   │
+   ▼
+Page Objects
+   │
+   ▼
+Playwright API
+   │
+   ▼
+Browser (Chromium / Firefox / WebKit)
+```
+
+Tests call methods from the page objects, which interact with the browser using Playwright.
 
 ---
 
 
-##  How to Run the Tests
+## Purpose
 
-### 1️⃣ Create and activate virtual environment
+This project was created as part of learning QA automation with Python and Playwright.
 
-        python -m venv .venv
-        source .venv/bin/activate
-
-    2️⃣ Install dependencies
-
-        pip install -r requirements.txt
-        playwright install
-
-    3️⃣ Run tests
-
-        pytest
-
----
-
-✅ Project Status
-The project is actively being improved.
-New features are added incrementally following real-world QA automation practices.
-
----
-
-👤 Author
-QA Automation portfolio project using Python and Playwright.
+The focus of the project is to practice browser automation, structured test organization, and basic test framework design.
